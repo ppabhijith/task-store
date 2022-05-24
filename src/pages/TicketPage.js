@@ -15,9 +15,9 @@ const TicketPage = () => {
         e.preventDefault();
         if (!editMode) {
             console.log("form data", formData)
-            const response = await axios.post("http://localhost:3000/tickets", {
-                formData
-            });
+            const response = await axios.post("http://localhost:3000/tickets",
+                { ...formData }
+            );
             const success = response.status;
             success == 201 && (navigate('/'));
         }
