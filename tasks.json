@@ -1,0 +1,55 @@
+{
+  "tickets": [
+    {
+      "category": "Q1 2022",
+      "color": "Red",
+      "title": "NFT safety 101 video",
+      "owner": "Ania Kubow",
+      "avatar": "https: //www.freecodecamp.org/news/content/images/size/w150/2021/05/ania-kubow-gravatar.jpeg",
+      "status": "Done",
+      "priority": "5",
+      "progress": "48",
+      "description": "Make a video show casing how to work with NFTs",
+      "timestamp": "2022-02-11T07: 36: 17+0000"
+    },
+    {
+      "category": "Q2 2022",
+      "color": "blue",
+      "title": "Build a bot",
+      "owner": "Ania Kubow",
+      "avatar": "https: //www.freecodecamp.org/news/content/images/size/w150/2021/05/ania-kubow-gravatar.jpeg",
+      "status": "Done",
+      "priority": "2",
+      "progress": "85",
+      "description": "Make a video show casing how to work with NFTs",
+      "timestamp": "2022-02-13T07: 36: 17+0000"
+    },
+    {
+      "category": "Q2 2022",
+      "color": "blue",
+      "title": "Build a bot",
+      "owner": "Ania Kubow",
+      "status": "in progress",
+      "priority": "4",
+      "progress": "28",
+      "description": "Make a video show casing how to work with NFTs",
+      "timestamp": "2022-02-13T07: 36: 17+0000",
+      "id": 6
+    },
+    {
+      "formData": {
+        "id": 1000,
+        "status": "not started",
+        "progress": 0,
+        "timeStamp": "2022-05-22T16:26:47.213Z",
+        "title": "s",
+        "description": "ffgj",
+        "category": "test2",
+        "priority": "2",
+        "owner": "gccnb",
+        "avatar": "http://localhost:3006/static/media/user_icon.a6143582309785dca610.png"
+      },
+      "id": 7
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  display: flex;
+}
+
+/* .........Nav........ */
+.nav {
+  height: 100vh;
+  background-color: rgb(43, 43, 63);
+  color: white;
+  text-align: center;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.nav :is(.nav--logo, .nav--controls) {
+  padding: 2em 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav .nav--logo img {
+  width: 40px;
+}
+
+#link {
+  text-decoration: none;
+  color: rgb(46, 46, 46);
+}
+
+/* .........DashBoard........ */
+.dash-board {
+  padding: 1em;
+  width: 100%;
+}
+
+.ticket-container {
+  height: 80vh;
+  overflow: scroll;
+}
+
+/* .........ticket card........ */
+.ticket-card {
+  display: flex;
+  width: 100%;
+}
+
+.ticket-card #link {
+  display: flex;
+  width: 100%;
+}
+
+.ticket-card #link>* {
+  background-color: rgb(221, 221, 221);
+  margin: 2px;
+  padding: 30px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.ticket-card .ticket--color {
+  width: 15px !important;
+  margin: 2px;
+  padding: 10px !important;
+}
+
+.ticket-card .avatar-container {
+  justify-content: center;
+  width: 30px;
+}
+
+.avatar-container .image-container {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.avatar-container .image-container img {
+  width: 100%;
+}
+
+.ticket-card .status-display {
+  display: flex;
+  justify-content: center;
+}
+
+.ticket-card .priority-display .star-container {
+  display: flex;
+  gap: 10px;
+}
+
+.ticket-card .progress-display {
+  min-width: 200px;
+}
+
+.ticket-card .progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: rgb(158, 158, 158);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.progress-bar .progress-indicator {
+  background-color: rgb(53, 25, 211);
+  height: 100%;
+}
+
+.ticket-card .delete-block {
+  background-color: rgb(211, 211, 211);
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+  display: flex;
+}
+
+.delete-block .delete-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: rgb(61, 61, 62);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
