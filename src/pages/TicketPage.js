@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import CategoriesContext from "../context";
 
 const TicketPage = () => {
     const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ const TicketPage = () => {
         progress: 0,
         timeStamp: new Date().toISOString()
     })
+    const [categories, setCategory] = useContext(CategoriesContext)
     const navigate = useNavigate()
     const handleSubmit = async (e) => {
         const response = true;
@@ -34,7 +36,6 @@ const TicketPage = () => {
         )
 
     }
-    const categories = ['test1', 'test2']
     let editMode = false;
     return (
         <div className="ticket">

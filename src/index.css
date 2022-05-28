@@ -40,6 +40,11 @@ body {
   color: rgb(46, 46, 46);
 }
 
+.nav--item {
+  cursor: pointer;
+  padding: 10px;
+}
+
 /* .........DashBoard........ */
 .dash-board {
   padding: 1em;
