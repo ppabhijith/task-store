@@ -4,8 +4,7 @@ import TicketCard from '../components/TicketCard'
 import CategoriesContext from '../context';
 const DashBoard = () => {
     const [tickets, setTicket] = useState(null);
-    console.log("dsfa")
-    const [categories, setCategory] = useContext(CategoriesContext);
+    const { categories, setCategory } = useContext(CategoriesContext);
     // const tickets = [
     //     {
     //         category: 'Q1 2022',
@@ -53,17 +52,16 @@ const DashBoard = () => {
     const uniqueCategories = [
         ...new Set(tickets?.map(({ category }) => category))
     ]
-
     useEffect(() => {
         axios.get('http://localhost:3000/tickets')
             .then(response => setTicket(response.data));
 
     }, [])
     useEffect(() => {
-        console.log(tickets)
-        setCategory(...new Set(tickets?.map(({ category }) => category)))
+        setCategory([
+            ...new Set(tickets?.map(({ category }) => category))
+        ])
     }, [tickets])
-    // console.log(uniqueCategories);
     return (
         <div className="dash-board">
             <h1>My Projects</h1>

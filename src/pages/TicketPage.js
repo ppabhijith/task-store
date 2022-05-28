@@ -5,18 +5,16 @@ import CategoriesContext from "../context";
 
 const TicketPage = () => {
     const [formData, setFormData] = useState({
-        id: 1000,
         status: 'not started',
         progress: 0,
         timeStamp: new Date().toISOString()
     })
-    const [categories, setCategory] = useContext(CategoriesContext)
+    const { categories, setCategory } = useContext(CategoriesContext)
     const navigate = useNavigate()
     const handleSubmit = async (e) => {
         const response = true;
         e.preventDefault();
         if (!editMode) {
-            console.log("form data", formData)
             const response = await axios.post("http://localhost:3000/tickets",
                 { ...formData }
             );
@@ -63,7 +61,7 @@ const TicketPage = () => {
                             value={formData.description}
                         />
 
-                        <lable>Category</lable>
+                        <label>Category</label>
                         <select
                             name="category"
                             value={formData.category}
@@ -80,7 +78,7 @@ const TicketPage = () => {
                         <label htmlFor="new-category">New Category</label>
                         <input
                             id="new-category"
-                            name="new-category"
+                            name="category"
                             type='text'
                             onChange={handleChange}
                             required={true}
@@ -146,7 +144,7 @@ const TicketPage = () => {
                                 max="100" />
                             <label htmlFor="progress">Progress</label>
 
-                            <lable htmlFor='status'>status</lable>
+                            <label htmlFor='status'>status</label>
                             <select id="status" value={formData.status} onChange={handleChange}>
                                 <option value='done' selected={formData.status === 'done'}>done</option>
                                 <option value='working on it' selected={formData.status === 'working on it'}>working on it</option>
