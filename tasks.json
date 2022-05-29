@@ -4,11 +4,11 @@
       "category": "Q1 2022",
       "color": "Red",
       "title": "NFT safety 101 video",
-      "owner": "Ania Kubow",
-      "avatar": "https: //www.freecodecamp.org/news/content/images/size/w150/2021/05/ania-kubow-gravatar.jpeg",
+      "owner": "Abhijith P P",
+      "avatar": "https://media-exp1.licdn.com/dms/image/C5603AQHuLVPcLLdyig/profile-displayphoto-shrink_200_200/0/1650794857144?e=1659571200&v=beta&t=cxSK6bXluiosXDznduhX1fF87ZL5umb832m1N558AhE",
       "status": "Done",
       "priority": "5",
-      "progress": "48",
+      "progress": "100",
       "description": "Make a video show casing how to work with NFTs",
       "timestamp": "2022-02-11T07: 36: 17+0000",
       "id": 1
@@ -17,11 +17,11 @@
       "category": "Q2 2022",
       "color": "blue",
       "title": "Build a bot",
-      "owner": "Ania Kubow",
-      "avatar": "https: //www.freecodecamp.org/news/content/images/size/w150/2021/05/ania-kubow-gravatar.jpeg",
+      "owner": "Abhijith",
+      "avatar": "https://media-exp1.licdn.com/dms/image/C5603AQHuLVPcLLdyig/profile-displayphoto-shrink_200_200/0/1650794857144?e=1659571200&v=beta&t=cxSK6bXluiosXDznduhX1fF87ZL5umb832m1N558AhE",
       "status": "Done",
       "priority": "2",
-      "progress": "85",
+      "progress": "100",
       "description": "Make a video show casing how to work with NFTs",
       "timestamp": "2022-02-13T07: 36: 17+0000",
       "id": 2
@@ -30,25 +30,13 @@
       "category": "Q2 2022",
       "color": "blue",
       "title": "Build a bot",
-      "owner": "Ania Kubow",
+      "owner": "Abhijith",
       "status": "in progress",
       "priority": "4",
       "progress": "28",
       "description": "Make a video show casing how to work with NFTs",
       "timestamp": "2022-02-13T07: 36: 17+0000",
       "id": 6
-    },
-    {
-      "id": 1000,
-      "status": "not started",
-      "progress": 0,
-      "timeStamp": "2022-05-24T10:05:05.854Z",
-      "title": "sw",
-      "description": "ffgj",
-      "category": "test2",
-      "priority": "3",
-      "owner": "gccnb",
-      "avatar": "http://localhost:3006/static/media/user_icon.a6143582309785dca610.png"
     }
   ]
 }

@@ -1,9 +1,9 @@
-import { useContext, useState } from "react"
-import { useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react"
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import CategoriesContext from "../context";
 
-const TicketPage = () => {
+const TicketPage = ({ editMode }) => {
     const [formData, setFormData] = useState({
         status: 'not started',
         progress: 0,
@@ -11,6 +11,15 @@ const TicketPage = () => {
     })
     const { categories, setCategory } = useContext(CategoriesContext)
     const navigate = useNavigate()
+    const { id } = useParams()
+
+    const fetchData = async () => {
+        const response = await axios.get(`http://localhost:3000/tickets/${id}`)
+        setFormData(response.data)
+    }
+    useEffect(() => {
+        editMode && fetchData()
+    }, [1])
     const handleSubmit = async (e) => {
         const response = true;
         e.preventDefault();
@@ -20,6 +29,14 @@ const TicketPage = () => {
             );
             const success = response.status;
             success == 201 && (navigate('/'));
+        }
+        else {
+            const response = await axios.put(`http://localhost:3000/tickets/${id}`,
+                { ...formData }
+            );
+            const success = response.status;
+            console.log("editmode", formData)
+            success == 200 && (navigate('/'));
         }
     }
     const handleChange = (e) => {
@@ -34,7 +51,6 @@ const TicketPage = () => {
         )
 
     }
-    let editMode = false;
     return (
         <div className="ticket">
             <h1>{editMode ? 'Update Ticket' : 'Create Ticket'}</h1>
@@ -64,7 +80,7 @@ const TicketPage = () => {
                         <label>Category</label>
                         <select
                             name="category"
-                            value={formData.category}
+                            value={formData.category || categories[0]}
                             onChange={handleChange}
                         >
                             {
@@ -81,7 +97,6 @@ const TicketPage = () => {
                             name="category"
                             type='text'
                             onChange={handleChange}
-                            required={true}
                             value={formData.category}
                         />
                         <label>Priority : </label>

@@ -9,7 +9,7 @@ const TicketCard = ({ color, ticket }) => {
     return (
         <div className="ticket-card">
 
-            <Link to={`/ticket/${ticket.documentid}`} id="link">
+            <Link to={`/ticket/${ticket.id}`} id="link">
                 <div className="ticket--color" style={{ backgroundColor: color }}></div>
                 <h3>{ticket.title}</h3>
                 <AvatarDisplay ticket={ticket} />
@@ -17,7 +17,7 @@ const TicketCard = ({ color, ticket }) => {
                 <PriorityDisplay priority={ticket.priority} />
                 <ProgressDisplay progress={ticket.progress} />
             </Link>
-            <DeleteBlock />
+            <DeleteBlock id={ticket.id} />
         </div>
     )
 }

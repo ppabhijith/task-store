@@ -4,9 +4,9 @@ const StatusDisplay = ({ status }) => {
         switch (status) {
             case 'Done': color = 'rgb(186,255,201)'
                 break;
-            case 'in progress': color = 'red'
+            case 'in progress': color = '#e3e78d'
                 break;
-            default: color = 'blue';
+            default: color = '#8c8ccb';
         }
         return color;
     }
