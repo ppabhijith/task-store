@@ -7,7 +7,7 @@ const TicketPage = ({ editMode }) => {
     const { categories, setCategory } = useContext(CategoriesContext)
     const [formData, setFormData] = useState({
         status: 'not started',
-        category: categories[0],
+        category: categories[0],    //default category
         progress: 0,
         timeStamp: new Date().toISOString()
     })
@@ -16,11 +16,15 @@ const TicketPage = ({ editMode }) => {
 
     const fetchData = async () => {
         const response = await axios.get(`http://localhost:3000/tickets/${id}`)
-        setFormData(response.data)
+        setFormData(response.data)                                 //auto populate the edit form
     }
+
     useEffect(() => {
         editMode && fetchData()
     }, [1])
+
+    // .....form handling methodes.....
+
     const handleSubmit = async (e) => {
         const response = true;
         e.preventDefault();
@@ -48,10 +52,9 @@ const TicketPage = ({ editMode }) => {
                 ...prevState,
                 [name]: value
             }
-        )
-        )
-
+        ))
     }
+
     return (
         <div className="ticket">
             <h1>{editMode ? 'Update Ticket' : 'Create Ticket'}</h1>
