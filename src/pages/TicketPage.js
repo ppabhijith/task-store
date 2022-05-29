@@ -153,6 +153,7 @@ const TicketPage = ({ editMode }) => {
                         </div>
 
                         {editMode && <>
+                            <label htmlFor="progress">Progress</label>
                             <input
                                 id="progress"
                                 name="progress"
@@ -161,9 +162,8 @@ const TicketPage = ({ editMode }) => {
                                 value={formData.progress}
                                 min="0"
                                 max="100" />
-                            <label htmlFor="progress">Progress</label>
 
-                            <label htmlFor='status'>status</label>
+                            <label htmlFor='status'>Status</label>
                             <select id="status" value={formData.status} onChange={handleChange}>
                                 <option value='done' selected={formData.status === 'done'}>done</option>
                                 <option value='working on it' selected={formData.status === 'working on it'}>working on it</option>

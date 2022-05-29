@@ -19,7 +19,7 @@ body {
   background-color: rgb(43, 43, 63);
   color: white;
   text-align: center;
-
+  position: fixed;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -49,10 +49,11 @@ body {
 .dash-board {
   padding: 1em;
   width: 100%;
+  margin-left: 75px;
 }
 
 .ticket-container {
-  height: 80vh;
+  /* height: 80vh; */
   overflow: scroll;
 }
 
@@ -143,4 +144,38 @@ body {
   justify-content: center;
   align-items: center;
   color: rgb(255, 255, 255);
+}
+
+/* ticket creation form */
+.ticket-container form {
+  display: flex;
+  gap: 80px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.ticket-container section {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.ticket-container section :is(input, select) {
+  margin-bottom: 20px;
+  font-size: max(16px, 1em);
+  font-family: inherit;
+  padding: 0.25em 0.5em;
+  background-color: #f7f4f4;
+  border: 2px solid lightblue;
+  border-radius: 4px;
+}
+
+.ticket-container section input[type="submit"] {
+  background-color: #79aee5;
+  width: 50%;
+}
+
+.ticket {
+  width: 100%;
+  margin-left: 75px;
 }
