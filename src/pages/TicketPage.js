@@ -4,12 +4,13 @@ import axios from "axios";
 import CategoriesContext from "../context";
 
 const TicketPage = ({ editMode }) => {
+    const { categories, setCategory } = useContext(CategoriesContext)
     const [formData, setFormData] = useState({
         status: 'not started',
+        category: categories[0],
         progress: 0,
         timeStamp: new Date().toISOString()
     })
-    const { categories, setCategory } = useContext(CategoriesContext)
     const navigate = useNavigate()
     const { id } = useParams()
 
@@ -80,7 +81,7 @@ const TicketPage = ({ editMode }) => {
                         <label>Category</label>
                         <select
                             name="category"
-                            value={formData.category || categories[0]}
+                            value={formData.category}
                             onChange={handleChange}
                         >
                             {
