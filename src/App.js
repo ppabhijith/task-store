@@ -1,6 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import DashBoard from './pages/DashBoard'
-import TicketPage from './pages/TicketPage'
+import { BrowserRouter } from 'react-router-dom';
+import AnimatedRoutes from './components/AnimatedRoutes'
 import Nav from './components/Nav'
 import ErrorBoundary from './ErrorBoundary'
 import CategoriesContext from './context';
@@ -14,11 +13,7 @@ function App() {
         <CategoriesContext.Provider value={value}>
           <BrowserRouter>
             <Nav />
-            <Routes>
-              <Route path='/' element={<DashBoard />} />
-              <Route path='/ticket' element={<TicketPage />} />
-              <Route path='/ticket/:id' element={<TicketPage editMode={true} />} />
-            </Routes>
+            <AnimatedRoutes />
           </BrowserRouter>
         </CategoriesContext.Provider>
       </ErrorBoundary>

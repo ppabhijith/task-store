@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useContext, useEffect, useState } from 'react'
 import TicketCard from '../components/TicketCard'
 import CategoriesContext from '../context';
+import Transitions from "../components/Transitions";
 const DashBoard = () => {
     const [tickets, setTicket] = useState(null);
     const { categories, setCategory } = useContext(CategoriesContext);
@@ -63,25 +64,27 @@ const DashBoard = () => {
         ])
     }, [tickets])
     return (
-        <div className="dash-board">
-            <h1>My Projects</h1>
-            <div className="ticket-container">
-                {tickets && uniqueCategories?.map((uniqueCategorie, categoryIndex) => (
-                    <div key={categoryIndex}>
-                        <h3>{uniqueCategorie}</h3>
-                        {tickets.filter(ticket => ticket.category === uniqueCategorie)
-                            .map((filteredTicket, _index) => (
-                                < TicketCard
-                                    key={_index}
-                                    color={colors[categoryIndex] || colors[0]}
-                                    ticket={filteredTicket}
-                                />
-                            ))
-                        }
-                    </div>
-                ))}
+        <Transitions delay={1}>
+            <div className="dash-board">
+                <h1>My Projects</h1>
+                <div className="ticket-container">
+                    {tickets && uniqueCategories?.map((uniqueCategorie, categoryIndex) => (
+                        <div key={categoryIndex}>
+                            <h3>{uniqueCategorie}</h3>
+                            {tickets.filter(ticket => ticket.category === uniqueCategorie)
+                                .map((filteredTicket, _index) => (
+                                    < TicketCard
+                                        key={_index}
+                                        color={colors[categoryIndex] || colors[0]}
+                                        ticket={filteredTicket}
+                                    />
+                                ))
+                            }
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
+        </Transitions>
     )
 }
 export default DashBoard;
